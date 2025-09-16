@@ -1,0 +1,24 @@
+// Icon
+import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+
+export const hero = {
+  title: ["Hi! I'm", "Yusup Budiman"],
+  subtitle: "Fullstack Web Developer",
+  description:
+    "I’m a Fullstack Developer specializing in building responsive web applications with clean interfaces and seamless user experiences.",
+};
+
+export const socials = [
+  {
+    media: "https://github.com/YusupBudiman",
+    icon: <FaGithub />,
+  },
+  {
+    media: "https://www.linkedin.com/in/yusupbudiman/",
+    icon: <FaLinkedin />,
+  },
+  {
+    media: "https://instagram.com/yusup.bd",
+    icon: <FaInstagramSquare />,
+  },
+];
