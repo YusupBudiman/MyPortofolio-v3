@@ -19,7 +19,7 @@ export default function ContactSection() {
   const sectionRef = useRef(null);
   const randomRotationsRef = useRef([]);
 
-  // Spell text saat hover
+  // Spell text
   const spellText = () => {
     let textArray = Array(fullText.length).fill("-");
     setHoveredText(textArray.join(""));
@@ -54,7 +54,6 @@ export default function ContactSection() {
     setButtonOffset({ x: 0, y: 0 });
   };
 
-  // Observer untuk aktifkan logo saat muncul
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -82,15 +81,15 @@ export default function ContactSection() {
       ref={sectionRef}
       className="relative w-full flex min-h-screen items-center justify-center overflow-hidden transition-colors duration-700 bg-[#161616]"
     >
-      {/* Background Image saat showForm = true */}
+      {/* BACKGROUND IMAGE */}
       <div
         className={`absolute inset-0 bg-[url('/images/dodle-bg.jpg')] bg-cover bg-center bg-no-repeat z-0 transition-opacity duration-700 ${
           showForm ? "opacity-100" : "opacity-0"
         }`}
       ></div>
 
-      {/* Overlay gelap sebelum tombol diklik */}
-      {!showForm && <div className="absolute inset-0 bg-black/50 z-0"></div>}
+      {/* Overlay */}
+      {!showForm && <div className="absolute inset-0 bg-[#161616] z-0"></div>}
 
       {/* LOGO ORBIT */}
       {activeLogos.map((item, index) => {
@@ -105,7 +104,7 @@ export default function ContactSection() {
         return (
           <div
             key={`${animationKey}-${index}`}
-            className="absolute flex items-center justify-center z-50 logo-wrapper"
+            className="absolute  flex items-center justify-center z-50 logo-wrapper"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div
@@ -118,24 +117,24 @@ export default function ContactSection() {
               <Image
                 src={item.img}
                 alt="Skills Icon"
-                width={200}
-                height={200}
-                className="logo"
+                width={100}
+                height={100}
+                className="logo lg:w-50 lg:h-50"
               />
             </div>
           </div>
         );
       })}
 
-      {/* LINGKARAN BESAR SAAT KLIK */}
+      {/* EXPANDING CIRCLE */}
       <div
         className={`absolute rounded-full pointer-events-none
-          w-52 h-52 transform transition-all duration-700 ease-out
-          z-30
-          ${showForm ? "scale-[12] bg-black/10" : "scale-0 bg-[#161616]"}`}
+          w-52 h-52 transform transition-all duration-1000 ease-out
+          z-60
+          ${showForm ? "scale-[12] bg-black/10" : "scale-0 bg-[#252524]"}`}
       ></div>
 
-      {/* TOMBOL / FORM */}
+      {/* CONTACT BUTTON / FORM */}
       <div
         ref={buttonRef}
         onMouseEnter={() => {
@@ -156,10 +155,10 @@ export default function ContactSection() {
         onClick={() => {
           if (!showForm) setShowForm(true);
         }}
-        className="relative flex items-center justify-center shadow-2xl cursor-pointer z-20 transition-all duration-700"
+        className="relative w-[104px] h-[104px] lg:w-[208px] lg:h-[208px] flex items-center justify-center shadow-2xl cursor-pointer z-20 transition-all duration-700"
         style={{
-          width: showForm ? "500px" : "208px",
-          height: showForm ? "auto" : "208px",
+          width: showForm ? "500px" : "",
+          height: showForm ? "auto" : "",
           borderRadius: showForm ? "1rem" : "9999px",
           padding: showForm ? "2rem" : "0",
           background: "rgba(255,255,255,0.1)",
@@ -170,13 +169,13 @@ export default function ContactSection() {
       >
         {!showForm ? (
           <span
-            className="text-5xl font-bold select-none text-white flex items-baseline"
+            className="text-md lg:text-5xl font-bold select-none text-white flex items-baseline"
             style={{
               transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`,
             }}
           >
             {hoveredText || fullText}
-            <span className="ml-1 w-2 h-2 bg-yellow-400 inline-block align-baseline"></span>
+            <span className="ml-1 w-1 h-1 lg:w-2 lg:h-2 bg-yellow-400 inline-block align-baseline"></span>
           </span>
         ) : (
           <div className="w-full relative z-30">

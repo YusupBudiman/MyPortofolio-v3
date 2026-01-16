@@ -14,7 +14,7 @@ export default function ProjectCarousel({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full py-10 relative">
+    <div className="max-w-[100vw] py-10 relative  flex justify-center items-center">
       <Swiper
         modules={[EffectCreative]}
         effect="creative"
@@ -30,23 +30,22 @@ export default function ProjectCarousel({ projects }) {
           next: { shadow: false, translate: ["50%", 0, -200], scale: 0.95 },
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="w-full"
       >
         {projects.map((project, index) => (
-          <SwiperSlide key={project.id} className="max-w-full mx-8">
+          <SwiperSlide key={project.id} className="mx-4 lg:mx-8">
             <ProjectCard {...project} isActive={index === activeIndex} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Floating overlay tombol */}
-      <div className="absolute bg-[#202020] bottom-4 left-1/2 transform -translate-x-1/2 z-50 flex gap-4 rounded-full">
+      {/* Button demo/code*/}
+      <div className="absolute bg-[#cacaca] bottom-1  lg:bottom-10 left-1/2 transform -translate-x-1/2 z-50 flex gap-4 rounded-full">
         {projects[activeIndex].github && (
           <a
             href={projects[activeIndex].github}
             target="_blank"
             rel="noopener noreferrer"
-            className=" text-white px-4 py-2 rounded-l-full hover:bg-yellow-400 hover:text-black transition-colors"
+            className=" text-black px-2 py-1 lg:px-4 lg:py-2 rounded-l-full hover:bg-yellow-400 hover:text-black transition-colors"
           >
             Code
           </a>
@@ -56,7 +55,7 @@ export default function ProjectCarousel({ projects }) {
             href={projects[activeIndex].demo}
             target="_blank"
             rel="noopener noreferrer"
-            className=" text-white px-4 py-2 rounded-r-full hover:bg-yellow-400 hover:text-black transition-colors"
+            className=" text-black px-2 py-1 lg:px-4 lg:py-2 rounded-r-full hover:bg-yellow-400 hover:text-black transition-colors"
           >
             Demo
           </a>

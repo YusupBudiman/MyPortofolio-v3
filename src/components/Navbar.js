@@ -31,8 +31,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[999]">
-      <div className="flex items-center justify-center px-10 py-2 lg:py-1">
+    <nav className="fixed w-full z-[999]">
+      <div className="flex items-center justify-between lg:justify-center px-10 py-2 lg:py-1">
         {/* Logo */}
         <div className="relative flex items-center justify-center mr-2 px-1.5 py-0.5 rounded-full p-[2px] bg-gradient-to-br from-green-900 via-green-700 to-green-500">
           <div className="flex items-center justify-center rounded-full bg-[#161616] backdrop-blur-sm">
@@ -68,14 +68,14 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => {
                     setIsOpen(false);
-                    setActiveSection(id); // set state saat klik
+                    setActiveSection(id);
                   }}
-                  className={`text-white md:text-sm block px-4 py-3 lg:py-0 hover:bg-[#e3e8b8] hover:text-black active:bg-[#80872c]
+                  className={`w-40 md:w-auto md:text-sm block px-4 py-3 lg:py-0 hover:bg-[#e3e8b8] hover:text-black active:bg-[#80872c]
                     md:border-1 md:border-[#272427] md:rounded-sm md:bg-[#202020]
                     transition-colors duration-300
                     ${
                       isActive
-                        ? "bg-[#f9fc9f] text-black md:bg-[#f9fc9f] md:text-black"
+                        ? "bg-[#f9fc9f] lg:bg-[#f9fc9f] text-black font-bold"
                         : ""
                     }`}
                 >

@@ -151,7 +151,7 @@ body {
 /* =============================== */
 
 .logo-wrapper {
-  opacity: 0; /* Awal tidak terlihat */
+  opacity: 0;
   animation-name: logo-intro;
   animation-duration: 1s;
   animation-fill-mode: forwards;
