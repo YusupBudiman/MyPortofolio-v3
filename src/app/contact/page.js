@@ -1,12 +1,9 @@
-import ContentContact from "@/components/ContentContact";
-
+import ContentContact from "@/components/contact/ContentContact";
+import SectionBackground from "@/components/sections/SectionBackground";
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="flex w-full min-h-screen items-center justify-center "
-    >
+    <SectionBackground id="contact">
       <ContentContact />
-    </section>
+    </SectionBackground>
   );
 }

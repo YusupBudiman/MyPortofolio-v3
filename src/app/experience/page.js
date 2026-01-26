@@ -1,12 +1,9 @@
 import ContentExperience from "@/components/ContentExperiences";
-
+import SectionBackground from "@/components/sections/SectionBackground";
 export default function ExperienceSection() {
   return (
-    <section
-      id="experience"
-      className="flex min-h-screen items-center justify-center p-8"
-    >
+    <SectionBackground id="experience">
       <ContentExperience />
-    </section>
+    </SectionBackground>
   );
 }

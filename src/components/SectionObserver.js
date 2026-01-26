@@ -14,12 +14,12 @@ export default function SectionObserver() {
             window.dispatchEvent(
               new CustomEvent("section-change", {
                 detail: id,
-              })
+              }),
             );
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     sections.forEach((sec) => observer.observe(sec));

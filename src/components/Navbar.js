@@ -1,86 +1,79 @@
 "use client";
-import Link from "next/link";
+
+import { useState, useEffect } from "react";
 import { navItems } from "@/data/navItems";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { useFullpage } from "./FullpageProvider";
 
 export default function Navbar() {
+  const { index, scrollToIndex } = useFullpage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // Sinkronisasi activeSection dari scroll index
+  useEffect(() => {
+    if (navItems[index]) {
+      const id = navItems[index].href.replace("#", "");
+      setActiveSection(id);
+    }
+  }, [index]);
+
+  const handleClick = (i, id) => {
+    scrollToIndex(i);
+    setActiveSection(id);
+    setIsOpen(false);
   };
 
-  // IntersectionObserver untuk scroll
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <nav className="fixed w-full z-[999]">
-      <div className="flex items-center justify-between lg:justify-center px-10 py-2 lg:py-1">
-        {/* Logo */}
-        <div className="relative flex items-center justify-center mr-2 px-1.5 py-0.5 rounded-full p-[2px] bg-gradient-to-br from-green-900 via-green-700 to-green-500">
-          <div className="flex items-center justify-center rounded-full bg-[#161616] backdrop-blur-sm">
-            <Link
-              href="#home"
-              className="text-md font-bold bg-gradient-to-b from-white to-gray-200 bg-clip-text text-transparent"
-            >
-              YS
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile */}
-        <button className="md:hidden" onClick={toggleMenu}>
+    <nav className="fixed left-[8%] top-0 h-full z-[998] flex items-center pointer-events-auto">
+      <div className="flex flex-col items-center justify-between lg:justify-center px-6 py-4 gap-6">
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
 
-        {/* Links */}
+        {/* Menu */}
         <ul
-          className={`absolute top-14 right-2 flex flex-col w-40 bg-[#13181c] rounded-lg shadow-[0_4px_12px_rgba(255,255,255,0.1)]
-            md:flex-row md:space-x-0.5 md:rounded-none md:p-0 md:static md:w-auto 
-            md:bg-transparent md:shadow-none items-start md:items-center md:space-y-0
-            transition-all duration-300 overflow-hidden 
-            ${isOpen ? "max-h-60" : "max-h-0 md:max-h-full"}`}
+          className={`flex flex-col items-start gap-4 overflow-hidden transition-all duration-300
+          ${isOpen ? "max-h-96 opacity-100" : "max-h-0 md:max-h-full opacity-0 md:opacity-100"}`}
         >
-          {navItems.map((item, index) => {
+          {navItems.map((item, i) => {
             const id = item.href.replace("#", "");
             const isActive = activeSection === id;
 
             return (
-              <li key={index}>
-                <Link
-                  href={item.href}
-                  onClick={() => {
-                    setIsOpen(false);
-                    setActiveSection(id);
-                  }}
-                  className={`w-40 md:w-auto md:text-sm block px-4 py-3 lg:py-0 hover:bg-[#e3e8b8] hover:text-black active:bg-[#80872c]
-                    md:border-1 md:border-[#272427] md:rounded-sm md:bg-[#202020]
-                    transition-colors duration-300
+              <li
+                key={i}
+                className="flex items-center gap-3 px-1 group cursor-pointer"
+              >
+                {/* DOT */}
+                <span
+                  className={`w-2 h-2 rounded-full transition-all duration-300
+                    group-hover:bg-[hsl(43,43%,84%)]
+                    group-hover:scale-150
+                    group-hover:border
+                    group-hover:border-[rgb(111,90,47)]
                     ${
                       isActive
-                        ? "bg-[#f9fc9f] lg:bg-[#f9fc9f] text-black font-bold"
-                        : ""
-                    }`}
+                        ? "bg-[hsl(43,43%,84%)] scale-150 border border-[rgb(111,90,47)]"
+                        : "bg-[hsl(40,40%,31%)]"
+                    }
+                  `}
+                />
+
+                <button
+                  onClick={() => handleClick(i, id)}
+                  className={`w-36 md:w-auto text-left md:text-center px-4 py-2 md:px-2 md:py-1
+                  text-[hsl(41,39%,31%)] md:text-xl md:font-bold rounded-sm
+                  transition-all duration-300
+                  group-hover:translate-x-1
+                  ${isActive ? "font-extrabold scale-105" : ""}`}
                 >
                   {item.name}
-                </Link>
+                </button>
               </li>
             );
           })}

@@ -1,13 +1,10 @@
 import { projects } from "@/data/Projects";
-import ProjectCarousel from "@/components/ProjectCarousel";
-
+import ProjectContent from "@/components/projects/ProjectContent";
+import SectionBackground from "@/components/sections/SectionBackground";
 export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="flex min-h-screen items-center justify-center"
-    >
-      <ProjectCarousel projects={projects} />
-    </section>
+    <SectionBackground id="projects">
+      <ProjectContent projects={projects} />
+    </SectionBackground>
   );
 }

@@ -1,7 +1,7 @@
 import "../styles/global.css";
+import FullpageProvider from "@/components/FullpageProvider";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CursorDot from "@/components/CursorDot";
+import CursorDot from "@/components/ui/CursorDot";
 
 export const metadata = {
   title: "My Portfolio",
@@ -11,14 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body className="bg-[#0e0e0e] text-white overflow-hidden">
         <CursorDot />
-        <Header />
-        {children}
-        <div className="fixed bottom-0 left-0 w-full h-8 pointer-events-none z-40">
-          <div className="w-full h-full bg-gradient-to-t from-[#161616]/20 to-transparent backdrop-blur-xs"></div>
-        </div>
-        <Footer />
+
+        <FullpageProvider>
+          <Header />
+          {children}
+        </FullpageProvider>
       </body>
     </html>
   );

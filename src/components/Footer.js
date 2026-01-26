@@ -41,7 +41,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#161616] flex justify-center md:justify-between text-center py-6 px-8 mt-12 z-99">
+    <footer className="w-full h-full flex items-center justify-center md:justify-between  z-99">
       <div className="hidden md:flex items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
           <h2 className=" text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">

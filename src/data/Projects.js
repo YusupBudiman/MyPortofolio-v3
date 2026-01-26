@@ -1,6 +1,20 @@
 export const projects = [
   {
-    id: 1,
+    id: 9,
+    title: "Portfolio - Base Version",
+    description: "Personal portfolio built with Next.js and Tailwind CSS",
+    tools: ["/images/skills/nextjs.svg", "/images/skills/tailwind-logo.png"],
+    images: [
+      "/images/projects/portofolio-base1.png",
+      "/images/projects/portofolio-base2.png",
+      "/images/projects/portofolio-base3.png",
+      "/images/projects/portofolio-base4.png",
+    ],
+    github: "https://github.com/YusupBudiman/my-portofolio-v2.git",
+    demo: "https://my-portofolio-v2-orpin.vercel.app/",
+  },
+  {
+    id: 8,
     title: "Movie App",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -19,7 +33,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 7,
     title: "Sales Prediction",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -35,11 +49,11 @@ export const projects = [
     ],
     github:
       "https://github.com/YusupBudiman/retail-app-least-square-quick-sort.git",
-    demo: "https://tanimanager.store/",
+    demo: "",
   },
 
   {
-    id: 3,
+    id: 6,
     title: "Movie App - MUI Style",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -53,7 +67,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Todo List App",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -66,7 +80,7 @@ export const projects = [
     demo: "https://todo-list-app-ten-roan.vercel.app/",
   },
   {
-    id: 5,
+    id: 4,
     title: "AI Medicine Assistant",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -80,10 +94,10 @@ export const projects = [
       "/images/projects/chatbot3.png",
     ],
     github: "https://github.com/YusupBudiman/ai-medicine-assistant.git",
-    demo: "none",
+    demo: "",
   },
   {
-    id: 6,
+    id: 3,
     title: "Kang Techno: SKS Hunter",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -102,7 +116,7 @@ export const projects = [
   },
 
   {
-    id: 7,
+    id: 2,
     title: "Parallax Effect - Dark Mode",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -119,7 +133,7 @@ export const projects = [
   },
 
   {
-    id: 8,
+    id: 1,
     title: "Starfall Animation",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [

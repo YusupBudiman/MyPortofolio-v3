@@ -1,16 +1,41 @@
 "use client";
-// import SkillsSection from "./skills/page";
-import ExperienceSection from "./experience/page";
+
+import Hero from "@/components/hero/Hero";
 import ProjectsSection from "./projects/page";
+import ExperienceSection from "./experience/page";
 import ContactSection from "./contact/page";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <ProjectsSection />
-      <ExperienceSection />
-      {/* <SkillsSection /> */}
-      <ContactSection />
-    </div>
+    <>
+      <section id="home" data-fullpage className="h-screen w-screen">
+        <Hero />
+      </section>
+
+      <section id="projects" data-fullpage className="h-screen w-screen">
+        <ProjectsSection />
+      </section>
+
+      <section id="experience" data-fullpage className="h-screen w-screen">
+        <ExperienceSection />
+      </section>
+
+      <section
+        id="contact"
+        data-fullpage
+        className="h-screen w-screen flex items-center justify-center"
+      >
+        <ContactSection />
+      </section>
+
+      <section
+        id="footer"
+        data-fullpage
+        className="h-[10vh] w-screen flex items-center justify-center bg-black"
+      >
+        <Footer />
+      </section>
+    </>
   );
 }
