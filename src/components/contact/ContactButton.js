@@ -28,28 +28,40 @@ export default function ContactButton({
       onClick={() => {
         if (!showForm) setShowForm(true);
       }}
-      className={`relative overflow-hidden w-[104px] h-[104px] lg:w-[208px] lg:h-[208px]
+      className={`relative overflow-hidden lg:w-[150px] lg:h-[150px] 2xl:w-[208px] 2xl:h-[208px]
         flex items-center justify-center cursor-pointer
         bg-[hsl(175,37%,38%)]
         transition-all duration-700
         ${!showForm ? "group-hover:bg-[hsl(60,33%,93%)]" : ""}`}
       style={{
-        width: showForm ? "500px" : "",
+        width: showForm
+          ? window.innerWidth >= 1536
+            ? "500px" // 2xl
+            : window.innerWidth >= 1024
+              ? "400px" // lg
+              : "300px" // sm
+          : "",
         height: showForm ? "auto" : "",
         borderRadius: showForm ? "1rem" : "9999px",
-        padding: showForm ? "2rem" : "0",
+        padding: showForm
+          ? window.innerWidth >= 1536
+            ? "2rem"
+            : window.innerWidth >= 1024
+              ? "1.5rem"
+              : "1rem"
+          : "0",
         transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`,
       }}
     >
       {/* BORDER MASK */}
       <div
         className={`absolute bg-[hsl(171,29%,50%)] 
-          mask-center mask-no-repeat [mask-size:100%] w-[250px] h-[250px] rounded-full
+          mask-center mask-no-repeat [mask-size:100%] lg:w-[180px] lg:h-[180px] 2xl:w-[250px] 2xl:h-[250px] rounded-full
           transition-colors duration-700
           ${
             !showForm
               ? "group-hover:bg-[hsl(148,36%,90%)] mask-[url(/images/border-btn1.png)]"
-              : "mask-[url(/images/pattern1.png)] w-full h-full mask-repeat rounded-none"
+              : "mask-[url(/images/pattern1.png)] !w-full !h-full mask-repeat rounded-none"
           }`}
       ></div>
 

@@ -29,7 +29,7 @@ export default function ContactOrbit({
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div
-              className="logo-inner p-2"
+              className="logo-inner rounded-xl lg:w-40 lg:h-40 2xl:w-50 2xl:h-50 overflow-hidden"
               style={{
                 transform: `${transform} ${rotation} rotate(${randomRotation}deg)`,
                 transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1)",
@@ -40,7 +40,7 @@ export default function ContactOrbit({
                 alt="Skills Icon"
                 width={100}
                 height={100}
-                className="logo lg:w-50 lg:h-50"
+                className="logo w-full h-full object-center object-cover"
               />
             </div>
           </div>

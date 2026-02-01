@@ -4,20 +4,35 @@ export default function ThemedButton({ label, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="relative w-[260px] h-[56px] cursor-pointer group"
+      className={`
+        relative cursor-pointer group
+      
+        lg:w-[240px] lg:h-[50px]
+        
+        2xl:w-[260px] 2xl:h-[56px]
+      `}
     >
       {/* Icon kanan bawah */}
       <div
-        className="absolute right-[-15%] bottom-[-12%] rotate-340 w-34 h-20 z-10
-          mask-[url('/images/iconbtn1.png')] mask-center mask-no-repeat
-          [mask-size:100%]
-          transition-colors duration-150 bg-[#d7c88d] group-hover:bg-[#fbf7e8]"
+        className={`
+          absolute right-[-15%] bottom-[-12%] rotate-340 z-10
+          mask-[url('/images/iconbtn1.png')] mask-center mask-no-repeat [mask-size:100%]
+          transition-colors duration-150 bg-[#d7c88d] group-hover:bg-[#fbf7e8]
+          
+          lg:w-30 lg:h-18
+          
+          2xl:w-34 2xl:h-20 
+          `}
       />
 
       <div
-        className="absolute left-[9%] bottom-[-20%] rotate-90 w-10 h-20 z-10
-          mask-[url('/images/border2.png')] mask-center mask-no-repeat
-          [mask-size:100%] transition-colors duration-100 bg-[#e8dcb0] group-hover:bg-[#fbf7e8]"
+        className={`
+          absolute  rotate-90 z-10 mask-[url('/images/border2.png')] mask-center mask-no-repeat [mask-size:100%] transition-colors duration-100 bg-[#e8dcb0] group-hover:bg-[#fbf7e8]
+          
+          lg:w-8 lg:h-18 lg:left-[11%] lg:bottom-[-22%]
+          
+          2xl:w-10 2xl:h-20 2xl:left-[9%] 2xl:bottom-[-20%]
+          `}
       />
 
       {/* SVG Button */}
@@ -102,8 +117,14 @@ export default function ThemedButton({ label, onClick }) {
       </svg>
 
       <span
-        className="relative z-10 flex h-full items-center justify-center font-semibold tracking-widest text-sm
-          text-[#614949] opacity-95 transition-all duration-300 group-hover:text-[#f6f8f9] group-hover:scale-105"
+        className={`
+          relative z-10 flex h-full items-center justify-center font-bold tracking-widest mr-5
+          text-[#614949] opacity-95 transition-all duration-300 group-hover:text-[#f6f8f9] 
+          
+          text-xs 
+          
+          2xl:text-sm
+          `}
       >
         {label}
       </span>

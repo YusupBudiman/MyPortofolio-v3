@@ -19,7 +19,7 @@ export default function ProjectSlider({
       className="relative z-10 bg-[hsl(55,29%,85%)] w-full h-full 
       flex items-center justify-center overflow-hidden border-4 border-[hsl(39,22%,58%)]"
     >
-      <div className="max-w-[100vw] py-10 relative flex justify-center items-center">
+      <div className="w-full h-full py-10 relative flex justify-center items-center">
         <Swiper
           modules={[EffectCreative]}
           effect="creative"
@@ -33,19 +33,30 @@ export default function ProjectSlider({
           creativeEffect={{
             prev: {
               shadow: false,
-              translate: ["-50%", 0, -200],
+              translate: ["-95%", 0, -200],
               scale: 0.95,
             },
             next: {
               shadow: false,
-              translate: ["50%", 0, -200],
+              translate: ["95%", 0, -200],
               scale: 0.95,
             },
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         >
           {projects.map((project, index) => (
-            <SwiperSlide key={project.id} className="mx-4 lg:mx-8">
+            <SwiperSlide
+              key={project.id}
+              className={`
+                flex justify-center
+
+                lg:!w-[25rem] 
+
+                xl:!w-[35rem] 
+                
+                2xl:!w-[60rem] 
+                `}
+            >
               <ProjectCard {...project} isActive={index === activeIndex} />
             </SwiperSlide>
           ))}

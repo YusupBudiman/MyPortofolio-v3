@@ -9,6 +9,7 @@ export default function Navbar() {
   const { index, scrollToIndex } = useFullpage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const isHero = index === 0;
 
   // Sinkronisasi activeSection dari scroll index
   useEffect(() => {
@@ -21,25 +22,51 @@ export default function Navbar() {
   const handleClick = (i, id) => {
     scrollToIndex(i);
     setActiveSection(id);
-    setIsOpen(false);
+    setIsOpen(false); // auto close di mobile
   };
 
   return (
-    <nav className="fixed left-[8%] top-0 h-full z-[998] flex items-center pointer-events-auto">
-      <div className="flex flex-col items-center justify-between lg:justify-center px-6 py-4 gap-6">
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
+    <>
+      {/* ================= MOBILE TOP BAR ================= */}
+      <nav className="fixed top-0 left-0 w-full z-[999] lg:hidden">
+        {/* Nav bar */}
+        <div
+          className={`flex items-center justify-between px-4 py-3 ${
+            isHero ? "text-white" : "text-black"
+          }`}
         >
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
+          <span className="font-bold tracking-wide">MyPortofolio</span>
 
-        {/* Menu */}
+          <button
+            aria-label="Open Menu"
+            onClick={() => setIsOpen(true)}
+            className="relative z-[1000] focus:outline-none"
+          >
+            <FiMenu size={26} />
+          </button>
+        </div>
+
+        {/* Full-screen overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/70 z-[998] transition-opacity duration-300"
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+
+        {/* Mobile menu */}
         <ul
-          className={`flex flex-col items-start gap-4 overflow-hidden transition-all duration-300
-          ${isOpen ? "max-h-96 opacity-100" : "max-h-0 md:max-h-full opacity-0 md:opacity-100"}`}
+          className={`fixed inset-0 w-full h-screen  z-[999] flex flex-col items-center justify-center gap-4 px-6 pt-8 transition-all duration-300
+          ${isOpen ? "opacity-100 " : "opacity-0"}`}
         >
+          {/* Close button inside menu */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="self-end p-4 text-white"
+          >
+            <FiX className="text-4xl" />
+          </button>
+
           {navItems.map((item, i) => {
             const id = item.href.replace("#", "");
             const isActive = activeSection === id;
@@ -47,30 +74,14 @@ export default function Navbar() {
             return (
               <li
                 key={i}
-                className="flex items-center gap-3 px-1 group cursor-pointer"
+                className="flex w-full items-center justify-center gap-3 px-1 group cursor-pointer border-b-1 border-white/10 "
               >
-                {/* DOT */}
-                <span
-                  className={`w-2 h-2 rounded-full transition-all duration-300
-                    group-hover:bg-[hsl(43,43%,84%)]
-                    group-hover:scale-150
-                    group-hover:border
-                    group-hover:border-[rgb(111,90,47)]
-                    ${
-                      isActive
-                        ? "bg-[hsl(43,43%,84%)] scale-150 border border-[rgb(111,90,47)]"
-                        : "bg-[hsl(40,40%,31%)]"
-                    }
-                  `}
-                />
-
                 <button
                   onClick={() => handleClick(i, id)}
-                  className={`w-36 md:w-auto text-left md:text-center px-4 py-2 md:px-2 md:py-1
-                  text-[hsl(41,39%,31%)] md:text-xl md:font-bold rounded-sm
-                  transition-all duration-300
-                  group-hover:translate-x-1
-                  ${isActive ? "font-extrabold scale-105" : ""}`}
+                  className={` px-4 py-2  text-xl font-light  
+                    
+                    
+                    ${isActive ? " text-[hsl(213,74%,67%)]" : "text-white "}`}
                 >
                   {item.name}
                 </button>
@@ -78,7 +89,78 @@ export default function Navbar() {
             );
           })}
         </ul>
-      </div>
-    </nav>
+      </nav>
+
+      {/* ================= DESKTOP SIDEBAR ================= */}
+      <nav className="hidden lg:flex fixed left-[8%] top-0 h-full z-[998] items-center pointer-events-auto">
+        <div
+          className={`
+          flex flex-col items-center justify-center
+
+          lg:px-4 lg:py-2 
+
+          2xl:px-6 2xl:py-4 
+          `}
+        >
+          <ul
+            className={`
+            flex flex-col items-start 
+
+            lg:gap-2
+            
+            2xl:gap-4
+            `}
+          >
+            {navItems.map((item, i) => {
+              const id = item.href.replace("#", "");
+              const isActive = activeSection === id;
+
+              return (
+                <li
+                  key={i}
+                  className={`flex items-center  group cursor-pointer
+
+                    lg:gap-1.5 lg:px-0.5
+
+                    2xl:gap-3 2xl:px-1`}
+                >
+                  {/* DOT */}
+                  <span
+                    className={`
+                      rounded-full transition-all duration-300 group-hover:bg-[hsl(43,43%,84%)]
+                      group-hover:scale-150 group-hover:border group-hover:border-[rgb(111,90,47)]
+                      
+                      lg:w-1.5 lg:h-1.5
+
+                      2xl:w-2 2xl:h-2
+                      ${
+                        isActive
+                          ? "bg-[hsl(43,43%,84%)] scale-150 border border-[rgb(111,90,47)]"
+                          : "bg-[hsl(40,40%,31%)]"
+                      }`}
+                  />
+
+                  <button
+                    onClick={() => handleClick(i, id)}
+                    className={`lg:font-bold text-[hsl(41,39%,31%)] rounded-sm
+                      transition-all duration-300
+                      group-hover:translate-x-1
+
+                      lg:text-sm lg:px-1 lg:py-0.5
+
+                      xl:text-lg
+
+                      2xl:text-xl 2xl:px-2 2xl:py-1
+                      ${isActive ? "font-extrabold scale-105" : ""}`}
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 }

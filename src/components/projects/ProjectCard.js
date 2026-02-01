@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function ProjectCard({
   title,
@@ -30,44 +29,67 @@ export default function ProjectCard({
   }, [isActive, images.length]);
 
   return (
-    <div className="relative max-w-[clamp(260px,80vw,420px)] 2xl:min-w-[840px] 2xl-[14rem] lg:h-[22rem] mx-auto cursor-pointer ">
-      <div className="h-[10rem] lg:h-[22rem] overflow-hidden">
-        <div
-          className="flex transition-transform duration-1000 ease-in-out h-full"
-          style={{ transform: `translateX(-${imgIndex * 100}%)` }}
-        >
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              className="w-full h-full flex-shrink-0 relative rounded-md "
-            >
-              <Image
-                src={img}
-                alt={`${title}-${idx}`}
-                fill
-                className={`object-fill  rounded-md ${brightnessClass}`}
-              />
-            </div>
-          ))}
-        </div>
+    <div
+      className={`
+        relative cursor-pointer overflow-hidden rounded-md mx-auto
 
-        {/* Icon */}
-        <div
-          className={`absolute right-2 bottom-2 lg:right-6 lg:bottom-4 flex flex-wrap gap-1 lg:gap-2 z-20 ${
+        w-[18rem] h-[14rem]
+
+        lg:w-[20rem] lg:h-[10rem]
+
+        xl:w-[30rem] xl:h-[14rem] 
+
+        2xl:w-[50rem] 2xl:h-[22rem] 
+  `}
+    >
+      <div
+        className="flex w-full h-full transition-transform duration-1000 ease-in-out "
+        style={{ transform: `translateX(-${imgIndex * 100}%)` }}
+      >
+        {images.map((img, idx) => (
+          <div key={idx} className="w-full h-full flex-shrink-0 relative">
+            <Image
+              src={img}
+              alt={`${title}-${idx}`}
+              fill
+              className={`object-fill ${brightnessClass}`}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Icon */}
+      <div
+        className={`absolute flex flex-wrap z-20
+
+          lg:right-2 lg:bottom-1.5 lg:gap-1
+
+          xl:right-3 xl:bottom-2
+
+          2xl:right-6 2xl:bottom-4 2xl:gap-2
+          
+          ${
             isActive
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           }`}
-        >
-          {tools.map((tool, idx) => (
-            <div
-              key={idx}
-              className="relative w-4 h-4 lg:w-6 lg:h-6 bg-white bg-opacity-90 rounded-full overflow-hidden border border-gray-200"
-            >
-              <Image src={tool} alt={title} fill className="object-cover" />
-            </div>
-          ))}
-        </div>
+      >
+        {tools.map((tool, idx) => (
+          <div
+            key={idx}
+            className={`
+              relative bg-white bg-opacity-90 rounded-full overflow-hidden border border-gray-200
+              
+              lg:w-3 lg:h-3 
+
+              xl:w-4 xl:h-4 
+              
+              2xl:w-6 2xl:h-6
+              `}
+          >
+            <Image src={tool} alt={title} fill className="object-cover" />
+          </div>
+        ))}
       </div>
     </div>
   );

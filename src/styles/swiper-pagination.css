@@ -1,0 +1,54 @@
+/* ============================= */
+/* Custom Swiper Pagination */
+/* File: src/styles/swiper-pagination.css */
+/* ============================= */
+
+.custom-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-color: hsl(20, 25%, 41%);
+  -webkit-mask: url("/images/icon-star1.png") center / contain no-repeat;
+  mask: url("/images/icon-star1.png") center / contain no-repeat;
+  margin: 0 3px;
+  opacity: 1;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: hsl(26, 33%, 23%);
+  transform: scale(1.15);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+
+/* lg ≥1024px */
+@media (min-width: 1024px) {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+  }
+}
+
+/* xl ≥1280px */
+@media (min-width: 1280px) {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+  }
+}
+
+/* 2xl ≥1536px */
+@media (min-width: 1536px) {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+  }
+}
