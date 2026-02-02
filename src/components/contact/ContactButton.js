@@ -28,10 +28,14 @@ export default function ContactButton({
       onClick={() => {
         if (!showForm) setShowForm(true);
       }}
-      className={`relative overflow-hidden lg:w-[150px] lg:h-[150px] 2xl:w-[208px] 2xl:h-[208px]
-        flex items-center justify-center cursor-pointer
-        bg-[hsl(175,37%,38%)]
+      className={`relative overflow-hidden flex items-center justify-center cursor-pointer bg-[hsl(175,37%,38%)]
         transition-all duration-700
+
+        w-[120px] h-[120px]
+
+        lg:w-[150px] lg:h-[150px] 
+        
+        2xl:w-[208px] 2xl:h-[208px]
         ${!showForm ? "group-hover:bg-[hsl(60,33%,93%)]" : ""}`}
       style={{
         width: showForm
@@ -56,8 +60,14 @@ export default function ContactButton({
       {/* BORDER MASK */}
       <div
         className={`absolute bg-[hsl(171,29%,50%)] 
-          mask-center mask-no-repeat [mask-size:100%] lg:w-[180px] lg:h-[180px] 2xl:w-[250px] 2xl:h-[250px] rounded-full
+          mask-center mask-no-repeat [mask-size:100%] rounded-full
           transition-colors duration-700
+
+          w-[150px] h-[150px]
+          
+          lg:w-[180px] lg:h-[180px] 
+          
+          2xl:w-[250px] 2xl:h-[250px]
           ${
             !showForm
               ? "group-hover:bg-[hsl(148,36%,90%)] mask-[url(/images/border-btn1.png)]"

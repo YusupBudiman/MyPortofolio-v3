@@ -29,7 +29,15 @@ export default function ContactOrbit({
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div
-              className="logo-inner rounded-xl lg:w-40 lg:h-40 2xl:w-50 2xl:h-50 overflow-hidden"
+              className={`
+                logo-inner rounded-xl overflow-hidden
+                
+                w-30 h-30
+
+                lg:w-40 lg:h-40 
+                
+                2xl:w-50 2xl:h-50
+                `}
               style={{
                 transform: `${transform} ${rotation} rotate(${randomRotation}deg)`,
                 transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1)",

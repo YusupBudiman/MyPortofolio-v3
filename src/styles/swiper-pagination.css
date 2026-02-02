@@ -1,16 +1,14 @@
-/* ============================= */
-/* Custom Swiper Pagination */
-/* File: src/styles/swiper-pagination.css */
-/* ============================= */
-
 .custom-pagination .swiper-pagination-bullet {
   width: 14px;
   height: 14px;
   display: inline-block;
+
   background-color: hsl(20, 25%, 41%);
+
   -webkit-mask: url("/images/icon-star1.png") center / contain no-repeat;
   mask: url("/images/icon-star1.png") center / contain no-repeat;
-  margin: 0 3px;
+
+  margin: 0 2px;
   opacity: 1;
   transition:
     transform 0.3s ease,

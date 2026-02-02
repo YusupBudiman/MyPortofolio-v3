@@ -7,6 +7,7 @@ import { useToast } from "@/utils/toast";
 import Toast from "@/components/ui/Toast";
 import ProjectActionButton from "@/components/ui/ProjectActionButton";
 import ProjectSlider from "./ProjectSlider";
+import MobileButtonBackgroun from "../sections/MobileButtonBackgroun";
 
 export default function ProjectContent({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -215,29 +216,14 @@ export default function ProjectContent({ projects }) {
         </div>
       </div>
 
-      {/* button demo / code mobile */}
-      <div
-        className={` w-full h-[28vh]  bg-[hsl(101,12%,49%)]
-            absolute z-20 flex transform 
+      {/* mobile button */}
+      <MobileButtonBackgroun>
+        <div
+          className={`
+          w-full flex gap-2 items-center justify-end px-6
         
-            bottom-0 gap-2 
-
-            lg:hidden
-        `}
-      >
-        <div
-          className={`
-              absolute z-20 bg-gradient-to-r from-[hsl(69,25%,55%)] via-[hsl(44,63%,58%)] to-[hsl(34,85%,62%)]
-              
-              w-full h-1
-              `}
-        />
-        <div
-          className={`
-          w-full h-full bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:50%]
-          `}
-        />
-        <div className="absolute flex gap-2 right-0 px-4 top-[-8%]">
+          lg:hidden`}
+        >
           <ProjectActionButton
             link={projects[activeIndex]?.github}
             onEmpty={() => showToast("Code tidak tersedia")}
@@ -264,7 +250,7 @@ export default function ProjectContent({ projects }) {
             />
           </ProjectActionButton>
         </div>
-      </div>
+      </MobileButtonBackgroun>
     </div>
   );
 }

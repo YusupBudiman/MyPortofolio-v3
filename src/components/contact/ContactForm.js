@@ -66,19 +66,41 @@ export default function ContactForm({ onClose, showToast }) {
       )}
 
       <div className="max-w-xl mx-2 p-6 text-white">
-        <h2 className="2xl:text-3xl lg:text-2xl font-bold 2xl:mb-6 lg:mb-4 text-center tracking-wide">
+        <h2
+          className={`
+           font-bold text-center tracking-wide
+
+          text-lg mb-2
+          
+          lg:text-2xl lg:mb-4
+
+          2xl:text-3xl 2xl:mb-6 `}
+        >
           Contact Me
         </h2>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col 2xl:gap-4 lg:gap-2"
+          className={`
+            flex flex-col  
+
+            gap-2
+
+            2xl:gap-4
+            `}
         >
           <input
             name="name"
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
-            className="2xl:p-3 lg:p-2 text-sm rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition"
+            className={`
+              bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition
+               
+               p-1.5 text-[10px] rounded-lg
+
+               lg:p-2 lg:text-sm lg:rounded-xl
+               
+               2xl:p-3`}
             required
           />
           <input
@@ -87,7 +109,14 @@ export default function ContactForm({ onClose, showToast }) {
             placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
-            className="2xl:p-3 lg:p-2 text-sm rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition"
+            className={`
+              bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition
+              
+              p-1.5 text-[10px] rounded-lg
+
+              lg:p-2 lg:text-sm lg:rounded-xl
+
+              2xl:p-3 `}
             required
           />
           <textarea
@@ -96,14 +125,24 @@ export default function ContactForm({ onClose, showToast }) {
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
-            className="textarea-custom 2xl:p-3 lg:p-2 text-sm rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition resize-none
-            "
+            className={`
+              textarea-custom bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:border-[hsl(173,39%,62%)] transition resize-none
+              p-1.5 text-[10px] rounded-lg
+              lg:p-2 lg:text-sm lg:rounded-xl
+              2xl:p-3 
+              `}
             required
           />
           <button
             type="submit"
             disabled={status === "sending"}
-            className="2xl:mt-2 2xl:py-3 lg:mt-1 lg:py-2 text-sm bg-[hsl(173,39%,62%)] text-white font-semibold  rounded-xl hover:scale-[1.02] hover:bg-[hsl(44,55%,73%)] active:scale-[0.98] transition disabled:opacity-50"
+            className={`
+               bg-[hsl(173,39%,62%)] text-white font-semibold hover:scale-[1.02] hover:bg-[hsl(44,55%,73%)] active:scale-[0.98] transition disabled:opacity-50
+              
+               mt-0.5 py-1 text-[10px] rounded-lg
+               lg:mt-1 lg:py-2 lg:text-sm lg:rounded-xl
+               2xl:mt-2 2xl:py-3 
+               `}
           >
             {status === "sending" ? "Sending..." : "Send Message"}
           </button>

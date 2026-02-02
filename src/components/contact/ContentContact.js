@@ -76,14 +76,21 @@ export default function ContactContent() {
           transition-all duration-700
           ${
             !showForm
-              ? "rounded-full hover:border-t-1 2xl:hover:border-x-12 2xl:hover:border-b-16 xl:hover:border-x-8 xl:hover:border-b-12"
+              ? "rounded-full hover:border-t-1 xl:hover:border-x-8 xl:hover:border-b-12 2xl:hover:border-x-12 2xl:hover:border-b-16 "
               : "rounded-3xl"
           }`}
         >
           <div
-            className={`z-20 bg-[hsl(173,39%,62%)] lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 absolute left-[50%] -translate-x-1/2 
+            className={`z-20 bg-[hsl(173,39%,62%)] absolute left-[50%] -translate-x-1/2 
             group-hover:bg-[hsl(44,55%,73%)] mask-[url(/images/icon-star1.png)] mask-contain mask-center mask-no-repeat
-            transition-colors duration-700 ${showForm ? "top-[-5%]" : "top-[-12%]"}`}
+            transition-colors duration-700
+            
+            w-6 h-6
+
+            lg:w-8 lg:h-8 
+            
+            2xl:w-12 2xl:h-12
+            ${showForm ? "top-[-5%]" : "top-[-12%]"}`}
           ></div>
 
           <ContactButton
@@ -104,10 +111,14 @@ export default function ContactContent() {
               >
                 <div
                   className="bg-white/70 mask-[url(/images/icon-message2.png)]
-                  mask-contain mask-center mask-no-repeat 
-                  lg:w-12 lg:h-12 2xl:w-20 2xl:h-20
-                  group-hover:bg-[hsl(170,9%,27%)]
-                  transition-colors duration-700"
+                  mask-contain mask-center mask-no-repeat group-hover:bg-[hsl(170,9%,27%)]
+                  transition-colors duration-700
+                  
+                  w-8 h-8
+                  
+                  lg:w-12 lg:h-12 
+                  
+                  2xl:w-20 2xl:h-20"
                 ></div>
               </span>
             ) : (

@@ -8,7 +8,7 @@ export const getOrbitTransform = (index, isHover, isActive, total) => {
   const hoverAmplitude = 18;
 
   if (isActive) {
-    const radius = 20;
+    const radius = 40;
     const angle = (index / total) * Math.PI * 2;
     const x = Math.cos(angle) * radius;
     const y = Math.sin(angle) * radius;

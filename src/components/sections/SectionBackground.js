@@ -126,29 +126,6 @@ export default function SectionBackground({ children, id, className = "" }) {
               `}
           />
 
-          <div
-            className="absolute z-10  bottom-0 left-0 w-full h-[28%] bg-[hsl(101,12%,49%)]
-          lg:hidden"
-          >
-            {/* gradient line mobile */}
-            <div
-              className={`
-              absolute z-20 bg-gradient-to-r from-[hsl(69,25%,55%)] via-[hsl(44,63%,58%)] to-[hsl(34,85%,62%)]
-              
-              w-full h-1
-
-              lg:hidden
-
-              `}
-            />
-            <div
-              className={`
-          w-full h-full bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:50%]
-          
-          `}
-            />
-          </div>
-
           {/* texture */}
           <div
             className={`
