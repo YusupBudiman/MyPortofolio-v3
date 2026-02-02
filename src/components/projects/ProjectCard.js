@@ -33,7 +33,7 @@ export default function ProjectCard({
       className={`
         relative cursor-pointer overflow-hidden rounded-md mx-auto
 
-        w-[18rem] h-[14rem]
+        w-[clamp(10rem,70vw,20rem)] h-[clamp(8rem,20vh,15rem)]
 
         lg:w-[20rem] lg:h-[10rem]
 
@@ -62,7 +62,7 @@ export default function ProjectCard({
       <div
         className={`absolute flex flex-wrap z-20
 
-          lg:right-2 lg:bottom-1.5 lg:gap-1
+          right-2 bottom-1.5 gap-1
 
           xl:right-3 xl:bottom-2
 
@@ -80,7 +80,7 @@ export default function ProjectCard({
             className={`
               relative bg-white bg-opacity-90 rounded-full overflow-hidden border border-gray-200
               
-              lg:w-3 lg:h-3 
+              w-3 h-3
 
               xl:w-4 xl:h-4 
               

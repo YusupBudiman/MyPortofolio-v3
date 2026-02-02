@@ -4,17 +4,24 @@ export default function SectionBackground({ children, id, className = "" }) {
   return (
     <section
       id={id}
-      className={`relative w-full h-full flex justify-center overflow-hidden ${className}`}
+      className={`relative w-full h-full flex justify-center  overflow-hidden ${className}`}
     >
       {/* wrapper */}
-      <div className="relative flex w-full items-stretch">
+      <div className="relative flex w-full items-stretch ">
         {/* side background */}
-        <div className="w-[6vw] bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:250%]" />
+        <div
+          className={`
+          w-[6vw] bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:250%]
+          hidden 
+          lg:block
+          `}
+        />
 
         {/* decoration */}
         <div
           className={`
-        z-10 absolute bg-[url('/images/dec-lantern1.png')] bg-contain bg-no-repeat bg-center bottom-[50%] left-[-2%]
+        z-10 absolute bg-[url('/images/dec-lantern1.png')] bg-contain bg-no-repeat 
+        bg-center bottom-[50%] left-[-2%] pointer-events-none
 
         lg:w-[50px] lg:h-[50px]
 
@@ -23,7 +30,8 @@ export default function SectionBackground({ children, id, className = "" }) {
         ></div>
         <div
           className={`
-          z-22 absolute  bg-[url('/images/dec-lantern1.png')] bg-contain bg-no-repeat bg-center bottom-[20%] rotate-350
+          z-22 absolute  bg-[url('/images/dec-lantern1.png')] bg-contain 
+          bg-no-repeat bg-center bottom-[20%] rotate-350 pointer-events-none
 
           lg:w-[40px] lg:h-[40px] lg:left-[4.5%]
           
@@ -85,28 +93,72 @@ export default function SectionBackground({ children, id, className = "" }) {
         ></div>
         <div
           className={`
-          z-21 absolute left-[0%] bottom-[-15%] bg-[url('/images/dec-mountain.png')] bg-contain bg-no-repeat bg-center
-          
-          lg:w-[250px] lg:h-[250px]
+          z-21 absolute left-[0%] bottom-[-15%] bg-[url('/images/dec-mountain.png')] 
+          bg-contain bg-no-repeat bg-center pointer-events-none
+
+          hidden
+
+          lg:block lg:w-[250px] lg:h-[250px]
           
           2xl:w-[400px] 2xl:h-[400px]
           `}
         ></div>
         {/* main background */}
-        <div className="relative bg-gradient-to-b from-[hsl(55,29%,85%)] via-[hsl(45,100%,97%)] to-[hsl(45,100%,97%)] w-[94vw] h-full flex flex-col items-center justify-center overflow-hidden">
+        <div
+          className={`
+          relative bg-gradient-to-b from-[hsl(55,29%,85%)] via-[hsl(45,100%,97%)] to-[hsl(45,100%,97%)] flex flex-col items-center justify-center overflow-hidden
+
+          w-full h-full
+
+          lg:w-[94vw]
+          `}
+        >
           {/* gradient line */}
           <div
             className={`
               absolute z-20 h-full left-0 bg-gradient-to-b from-[hsl(69,25%,55%)] via-[hsl(44,63%,58%)] to-[hsl(34,85%,62%)]
               
-              lg:w-1
+              hidden
+
+              lg:block lg:w-1
 
               2xl:w-2 
               `}
           />
 
+          <div
+            className="absolute z-10  bottom-0 left-0 w-full h-[28%] bg-[hsl(101,12%,49%)]
+          lg:hidden"
+          >
+            {/* gradient line mobile */}
+            <div
+              className={`
+              absolute z-20 bg-gradient-to-r from-[hsl(69,25%,55%)] via-[hsl(44,63%,58%)] to-[hsl(34,85%,62%)]
+              
+              w-full h-1
+
+              lg:hidden
+
+              `}
+            />
+            <div
+              className={`
+          w-full h-full bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:50%]
+          
+          `}
+            />
+          </div>
+
           {/* texture */}
-          <div className="absolute inset-0 bg-[url('/images/art5.png')] bg-cover bg-center bg-no-repeat z-0" />
+          <div
+            className={`
+            absolute inset-0 bg-[url('/images/art5.png')] z-0
+            
+            bg-cover bg-no-repeat
+
+            lg:bg-center 
+            `}
+          />
 
           {children}
         </div>

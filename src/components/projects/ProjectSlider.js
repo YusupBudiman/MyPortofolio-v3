@@ -50,6 +50,8 @@ export default function ProjectSlider({
               className={`
                 flex justify-center
 
+                !w-[80vw]
+
                 lg:!w-[25rem] 
 
                 xl:!w-[35rem] 

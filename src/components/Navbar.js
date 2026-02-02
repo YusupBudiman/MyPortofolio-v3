@@ -56,8 +56,8 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <ul
-          className={`fixed inset-0 w-full h-screen  z-[999] flex flex-col items-center justify-center gap-4 px-6 pt-8 transition-all duration-300
-          ${isOpen ? "opacity-100 " : "opacity-0"}`}
+          className={` inset-0 w-full h-screen  z-[999] flex flex-col items-center justify-center gap-4 px-6 pt-8 transition-all duration-300
+          ${isOpen ? "fixed" : "hidden"}`}
         >
           {/* Close button inside menu */}
           <button
