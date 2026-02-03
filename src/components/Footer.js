@@ -42,7 +42,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full h-full flex items-center justify-center md:justify-between  z-99">
-      <div className="hidden md:flex items-center justify-center gap-8">
+      <div className="hidden lg:flex items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
           <h2 className=" text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
             Local Time
@@ -63,12 +63,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full md:w-auto">
+      <div className="flex flex-col items-center w-full lg:w-auto">
         <h2 className="text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
           Socials
         </h2>
 
-        <ul className="flex items-center justify-evenly gap-6 mt-2 text-sm font-medium text-[#d6d6d6]">
+        <ul className="flex flex-col lg:flex-row items-center justify-evenly gap-6 mt-2 text-sm font-medium text-[#d6d6d6]">
           {socials.map((item) => (
             <li key={item.name}>
               <Link href={item.url} target="_blank">

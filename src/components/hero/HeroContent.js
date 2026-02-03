@@ -269,10 +269,7 @@ export default function HeroContent() {
           </div>
 
           {/* preview */}
-          <div
-            className="hidden 
-          lg:block"
-          >
+          <div className="hidden lg:block">
             <ProjectPreviewCard
               previewImages={previewImages}
               onClick={() => scrollToIndex(1)}
