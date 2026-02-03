@@ -32,7 +32,13 @@ export default function Home() {
       <section
         id="footer"
         data-fullpage
-        className="h-[10vh] w-screen flex items-center justify-center bg-black"
+        className={`
+          flex items-center justify-center bg-black 
+
+          w-screen h-screen
+           
+          lg:h-[10vh]
+          `}
       >
         <Footer />
       </section>

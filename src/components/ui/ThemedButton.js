@@ -7,6 +7,7 @@ export default function ThemedButton({ label, onClick }) {
       className={`
         relative cursor-pointer group
       
+ 
         lg:w-[240px] lg:h-[50px]
         
         2xl:w-[260px] 2xl:h-[56px]
@@ -19,6 +20,7 @@ export default function ThemedButton({ label, onClick }) {
           mask-[url('/images/iconbtn1.png')] mask-center mask-no-repeat [mask-size:100%]
           transition-colors duration-150 bg-[#d7c88d] group-hover:bg-[#fbf7e8]
           
+         
           lg:w-30 lg:h-18
           
           2xl:w-34 2xl:h-20 

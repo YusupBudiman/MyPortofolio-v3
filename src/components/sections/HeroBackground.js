@@ -4,14 +4,20 @@ import Mask from "../hero/parts/HeroMask";
 
 export default function HeroBackground() {
   return (
-    <>
+    <div
+      className="absolute w-full h-full bg-gradient-to-b 
+    from-[#fbf7cb] to-[#07312c]
+     lg:from-[#07312c] lg:via-[#418170] lg:to-[#fbf7cb]"
+    >
       {/* ===== GLOW ===== */}
       <div
         className={`
-          flex z-1 rounded-tl-full absolute right-0 bottom-0 blur-[80px]
+           z-1 rounded-tl-full absolute right-0 bottom-0 blur-[80px]
           bg-gradient-to-t from-[hsl(43,76%,84%)] to-[hsla(43,76%,84%,0.8)]
           
-          lg:w-[550px] lg:h-[180px]
+          hidden 
+
+          lg:flex lg:w-[550px] lg:h-[180px]
 
           xl:w-[750px] 
           
@@ -19,15 +25,82 @@ export default function HeroBackground() {
           `}
       />
 
+      {/* mobile */}
+      <div
+        className="z-5 lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-[220vw] h-[80vh] rounded-b-full bg-[hsl(60,42%,95%)] flex justify-center items-start
+       border-x-32 border-b-1 border-[hsl(65,45%,84%)] overflow-hidden"
+      >
+        <Mask
+          className="
+          z-2 absolute bottom-0 w-full h-20 bg-gradient-to-bl from-[hsl(144,16%,76%)] via-[hsl(82,25%,83%)] to-[hsl(87,15%,88%)]
+          [mask-image:url('/images/iconbtn1.png')]
+          mask-repeat mask-center [mask-size:30%]
+  "
+        />
+
+        <div
+          className="z-5 relative w-[140vw] h-full rounded-b-full bg-gradient-to-b from-[#07312c] via-[rgba(65,129,112)] to-[#fbf7cb]
+        border-x-48 border-b-1 border-[hsl(65,45%,84%)] overflow-hidden"
+        >
+          {/* ===== MAIN ORB ===== */}
+          <div
+            className={`
+           z-5 flex absolute bg-gradient-to-b from-[rgb(150,171,125)] to-[rgb(241,240,204)] rounded-full
+          
+            w-[340px] h-[340px] left-[50%] -translate-x-1/2 bottom-[1%] 
+            shadow-[0_0_0_20px_rgba(241,240,204,0.2),0_0_0_60px_rgba(241,240,204,0.1)]
+          `}
+          >
+            {/* ===== Bird Left ===== */}
+            <Mask
+              className={`
+            mask-[url('/images/bird1.png')] absolute mask-center mask-no-repeat [mask-size:100%] z-[5] bg-gradient-to-tr from-[hsla(137,18%,56%,0.3)] via-[hsla(137,18%,56%,1)] to-[hsla(137,18%,56%,0.3)] 
+            rotate-[352deg] w-[120px] h-[120px] top-[-16%] left-[-12%] 
+
+      `}
+            />
+            {/* Birt Right */}
+            <Mask
+              className={`
+            mask-[url('/images/bird1.png')] absolute mask-center mask-no-repeat [mask-size:100%] z-[99] bg-gradient-to-tr from-[hsla(137,18%,56%,0.3)] via-[hsla(137,18%,56%,1)] to-[hsla(137,18%,56%,0.3)] 
+            rotate-[80deg] w-[120px] h-[120px] top-[-16%] right-[-12%] 
+            `}
+            />
+
+            {/* Inner Orb */}
+            <div
+              className={`
+               flex absolute inset-0 m-auto rounded-full border-white/30 bg-gradient-to-b from-[rgb(150,171,125)] to-[rgb(241,240,204)]
+            
+               w-[320px] h-[320px] border-l-6 border-b-6 border-r-3
+            `}
+            />
+          </div>
+
+          {/* ===== CHARACTER ===== */}
+          <div
+            className={`
+          absolute z-10 bg-[url('/images/myimg7.png')] bg-cover  left-[50%] -translate-x-1/2
+          
+          h-[340px] w-[280px] bottom-[-6%]
+          `}
+          />
+        </div>
+      </div>
+
+      {/* dekstop */}
       {/* ===== MAIN ORB ===== */}
       <div
-        className={`
-            flex absolute bg-gradient-to-b from-[rgb(150,171,125)] to-[rgb(241,240,204)] rounded-full
+        className={`hidden
+           z-5 lg:flex absolute bg-gradient-to-b from-[rgb(150,171,125)] to-[rgb(241,240,204)] rounded-full
           
-            lg:w-[300px] lg:h-[300px] lg:right-[35%] lg:bottom-[15%] 
+            w-[200px] h-[200px] left-[50%] -translate-x-1/2 bottom-[30%] 
+            shadow-[0_0_0_30px_rgba(241,240,204,0.2),0_0_0_90px_rgba(241,240,204,0.1)]
+
+            lg:w-[300px] lg:h-[300px] lg:bottom-[15%] 
             lg:shadow-[0_0_0_30px_rgba(241,240,204,0.2),0_0_0_90px_rgba(241,240,204,0.1)]
           
-            2xl:w-[600px] 2xl:h-[600px] 2xl:right-[32%] 
+            2xl:w-[600px] 2xl:h-[600px]  
             2xl:shadow-[0_0_0_40px_rgba(241,240,204,0.2),0_0_0_120px_rgba(241,240,204,0.1)]
           `}
       >
@@ -67,9 +140,9 @@ export default function HeroBackground() {
       {/* ===== CHARACTER ===== */}
       <div
         className={`
-          absolute z-10 bg-[url('/images/myimg7.png')] bg-cover bottom-[-5%] right-[35%]
+          absolute z-10 bg-[url('/images/myimg7.png')] bg-cover  left-[50%] -translate-x-1/2
           
-          lg:h-[340px] lg:w-[280px]
+          lg:h-[340px] lg:w-[280px] lg:bottom-[-5%]
 
           2xl:h-[580px] 2xl:w-[480px]
           `}
@@ -333,6 +406,6 @@ export default function HeroBackground() {
           2xl:w-[60px] 2xl:h-[200px]
           `}
       />
-    </>
+    </div>
   );
 }

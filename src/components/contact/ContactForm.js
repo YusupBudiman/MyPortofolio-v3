@@ -140,7 +140,9 @@ export default function ContactForm({ onClose, showToast }) {
                bg-[hsl(173,39%,62%)] text-white font-semibold hover:scale-[1.02] hover:bg-[hsl(44,55%,73%)] active:scale-[0.98] transition disabled:opacity-50
               
                mt-0.5 py-1 text-[10px] rounded-lg
+
                lg:mt-1 lg:py-2 lg:text-sm lg:rounded-xl
+               
                2xl:mt-2 2xl:py-3 
                `}
           >

@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import { navItems } from "@/data/navItems";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useFullpage } from "./FullpageProvider";
+import { or } from "three/tsl";
 
 export default function Navbar() {
   const { index, scrollToIndex } = useFullpage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const isHero = index === 0;
+  const isFooter = index === 4;
+  const isHeroOrFooter = isHero || isFooter;
 
   // Sinkronisasi activeSection dari scroll index
   useEffect(() => {
@@ -28,12 +31,13 @@ export default function Navbar() {
   return (
     <>
       {/* ================= MOBILE TOP BAR ================= */}
-      <nav className="fixed top-0 left-0 w-full z-[999] lg:hidden">
+      <nav className="fixed top-0 left-0 w-full z-[998] lg:hidden">
         {/* Nav bar */}
         <div
-          className={`flex items-center justify-between px-4 py-3 ${
-            isHero ? "text-white" : "text-black"
-          }`}
+          className={`
+            flex items-center justify-between px-4 py-3 
+            ${isHeroOrFooter ? "text-white" : "text-black"}
+            `}
         >
           <span className="font-bold tracking-wide">MyPortofolio</span>
 
