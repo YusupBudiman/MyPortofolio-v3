@@ -27,7 +27,7 @@ export default function HeroBackground() {
 
       {/* mobile */}
       <div
-        className="z-5 lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-[220vw] h-[80vh] rounded-b-full bg-[hsl(60,42%,95%)] flex justify-center items-start
+        className="z-5 lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-[220vw] h-[70vh] rounded-b-full bg-[hsl(60,42%,95%)] flex justify-center items-start
        border-x-32 border-b-1 border-[hsl(65,45%,84%)] overflow-hidden"
       >
         <Mask

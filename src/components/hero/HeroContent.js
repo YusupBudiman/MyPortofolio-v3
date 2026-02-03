@@ -109,7 +109,7 @@ export default function HeroContent() {
           className={`
             flex flex-col
         
-            w-full h-[18vh] px-4
+            w-full h-[28vh] px-4
         
             lg:w-[320px] lg:h-auto lg:items-start
         `}
