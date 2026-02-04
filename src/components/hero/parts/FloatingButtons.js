@@ -1,6 +1,6 @@
 "use client";
 
-import ThemedButton from "@/components/ui/ThemedButton";
+import NavSkillButton from "./NavSkillButton";
 
 export default function FloatingButtons() {
   return (

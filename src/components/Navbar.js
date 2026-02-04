@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { navItems } from "@/data/navItems";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useFullpage } from "./FullpageProvider";
-import { or } from "three/tsl";
 
 export default function Navbar() {
   const { index, scrollToIndex } = useFullpage();
@@ -14,7 +13,7 @@ export default function Navbar() {
   const isFooter = index === 4;
   const isHeroOrFooter = isHero || isFooter;
 
-  // Sinkronisasi activeSection dari scroll index
+  // Sinkronisasi activeSection
   useEffect(() => {
     if (navItems[index]) {
       const id = navItems[index].href.replace("#", "");
@@ -25,14 +24,13 @@ export default function Navbar() {
   const handleClick = (i, id) => {
     scrollToIndex(i);
     setActiveSection(id);
-    setIsOpen(false); // auto close di mobile
+    setIsOpen(false);
   };
 
   return (
     <>
       {/* ================= MOBILE TOP BAR ================= */}
       <nav className="fixed top-0 left-0 w-full z-[998] lg:hidden">
-        {/* Nav bar */}
         <div
           className={`
             flex items-center justify-between px-4 py-3 
@@ -50,7 +48,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Full-screen overlay */}
         {isOpen && (
           <div
             className="fixed inset-0 bg-black/70 z-[998] transition-opacity duration-300"
@@ -63,7 +60,6 @@ export default function Navbar() {
           className={`inset-0 w-full h-screen  z-[999] flex flex-col items-center justify-center gap-4 px-6 pt-8 transition-all duration-300
           ${isOpen ? "fixed " : "hidden"}`}
         >
-          {/* Close button inside menu */}
           <button
             onClick={() => setIsOpen(false)}
             className="self-end p-4 text-white"
