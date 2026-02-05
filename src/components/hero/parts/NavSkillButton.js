@@ -9,12 +9,12 @@ export default function NavSkillButton({
     <div
       className={`
     relative bg-transparent  border-dotted  rounded-full flex items-center justify-center
-    transition-all duration-300
+    transition-all duration-300 w-12 h-12
     
     ${
       active
-        ? "border-none w-11 h-11 bg-gradient-to-b pb-0.75 from-[hsl(48,50%,72%)] via-[hsl(72,11%,82%)] to-[hsl(163,47%,85%)]"
-        : "w-12 h-12 border-dotted border-2 border-[hsl(171,29%,50%)]"
+        ? "border-none bg-gradient-to-b pb-0.75 from-[hsl(48,50%,72%)] via-[hsl(72,11%,82%)] to-[hsl(163,47%,85%)]"
+        : " border-dotted border-2 border-[hsl(171,29%,50%)]"
     }`}
       onClick={onClick}
     >
@@ -31,8 +31,8 @@ export default function NavSkillButton({
         className={`
         relative flex items-center justify-center rounded-full overflow-hidden
         
-        w-10 h-10 
-        ${active ? "bg-[hsl(47,88%,97%)] border-2 border-[hsl(175,37%,38%)] " : "bg-[hsl(175,37%,38%)]"}
+         
+        ${active ? "bg-[hsl(47,88%,97%)] border-2 border-[hsl(175,37%,38%)] w-11 h-11" : "bg-[hsl(175,37%,38%)] w-10 h-10"}
         `}
       >
         <div
