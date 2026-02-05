@@ -35,7 +35,7 @@ export default function Home() {
         className={`
           flex items-center justify-center bg-black 
 
-          w-screen h-screen
+          w-screen h-[30vh]
            
           lg:h-[10vh]
           `}

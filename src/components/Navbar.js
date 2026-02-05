@@ -37,7 +37,12 @@ export default function Navbar() {
             ${isHeroOrFooter ? "text-white" : "text-black"}
             `}
         >
-          <span className="font-bold tracking-wide">MyPortofolio</span>
+          <span
+            className="font-bold tracking-wide"
+            onClick={() => scrollToIndex(0)}
+          >
+            MyPortofolio
+          </span>
 
           <button
             aria-label="Open Menu"

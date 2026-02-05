@@ -2,11 +2,15 @@ import ContactOrbButton from "@/components/ui/ContactOrbButton";
 import Mask from "@/components/hero/parts/HeroMask";
 import CardSkill from "./CardSkill";
 import skills from "@/data/skills";
+import { useFullpage } from "@/components/FullpageProvider";
+import { downloadCV } from "@/utils/downloadCV";
 
 // icon
 import { IoMdDownload } from "react-icons/io";
 
 export default function SkillContent() {
+  const { scrollToIndex } = useFullpage();
+
   return (
     <div
       id="profile"
@@ -27,7 +31,7 @@ export default function SkillContent() {
     
               mt-24 gap-2 
     
-              lg:mb-6 lg:mt-0
+              lg:mt-0 lg:mb-6
     
               2xl:gap-4 2xl:mb-8
               `}
@@ -87,7 +91,7 @@ export default function SkillContent() {
             
                 w-full h-[28vh] px-4
             
-                lg:w-[320px] lg:h-auto lg:items-start
+                lg:w-[320px] lg:h-auto lg:items-start lg:mt-18
             `}
       >
         {/* name */}
@@ -209,6 +213,7 @@ export default function SkillContent() {
 
               <div className="lg:hidden">
                 <ContactOrbButton
+                  onClick={downloadCV}
                   label={<IoMdDownload />}
                   className={"text-[hsl(357,14%,33%)]"}
                 />

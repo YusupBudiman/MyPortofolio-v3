@@ -291,6 +291,7 @@ export default function HeroContent() {
         className={`
         flex flex-col absolute 
         top-[24%] right-[2%] gap-2 z-30
+        lg:top-[30%] lg:right-[14%] lg:gap-6
         `}
       >
         <NavSkillButton

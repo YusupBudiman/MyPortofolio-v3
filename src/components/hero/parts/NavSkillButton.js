@@ -9,7 +9,10 @@ export default function NavSkillButton({
     <div
       className={`
     relative bg-transparent  border-dotted  rounded-full flex items-center justify-center
-    transition-all duration-300 w-12 h-12
+    transition-all duration-300 
+    w-12 h-12
+
+    lg:w-18 lg:h-18
     
     ${
       active
@@ -24,15 +27,23 @@ export default function NavSkillButton({
         -top-1.5 left-1/2 -translate-x-1/2
 
         w-3 h-3
+
+        lg:w-5 lg:h-5 lg:-top-2.5
+
         ${active ? "bg-[hsl(48,50%,72%)]" : "bg-[hsl(175,38%,63%)]"}
         `}
       ></div>
       <div
         className={`
         relative flex items-center justify-center rounded-full overflow-hidden
-        
+        w-10 h-10
+        lg:w-15 lg:h-15
          
-        ${active ? "bg-[hsl(47,88%,97%)] border-2 border-[hsl(175,37%,38%)] w-11 h-11" : "bg-[hsl(175,37%,38%)] w-10 h-10"}
+        ${
+          active
+            ? "bg-[hsl(47,88%,97%)] border-2 border-[hsl(175,37%,38%)] w-11 h-11 lg:w-16 lg:h-16 lg:border-4"
+            : "bg-[hsl(175,37%,38%)] "
+        }
         `}
       >
         <div
@@ -46,7 +57,9 @@ export default function NavSkillButton({
         <span
           id={id}
           className={`
-            w-4 h-4 text-base 
+            text-base 
+
+            lg:text-2xl
             ${active ? "text-[hsl(170,9%,27%)]" : "text-[hsl(133,69%,97%)]"}
             ${className}`}
         >

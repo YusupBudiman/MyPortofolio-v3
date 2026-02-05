@@ -4,10 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const socials = [
-  { name: "Email", url: "mailto:yourmail@example.com" },
-  { name: "GitHub", url: "https://github.com" },
-  { name: "LinkedIn", url: "https://linkedin.com" },
-  { name: "Twitter", url: "https://twitter.com" },
+  { name: "Email", url: "mailto:yusupbudiman3@gmail.com" },
+  { name: "GitHub", url: "https://github.com/YusupBudiman" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/yusupbudiman" },
 ];
 
 export default function Footer() {
@@ -68,7 +67,10 @@ export default function Footer() {
           Socials
         </h2>
 
-        <ul className="flex flex-col lg:flex-row items-center justify-evenly gap-6 mt-2 text-sm font-medium text-[#d6d6d6]">
+        <ul
+          className="flex flex-col items-center justify-center gap-4 mt-2 text-sm font-medium text-[#d6d6d6]
+        lg:flex-row"
+        >
           {socials.map((item) => (
             <li key={item.name}>
               <Link href={item.url} target="_blank">
