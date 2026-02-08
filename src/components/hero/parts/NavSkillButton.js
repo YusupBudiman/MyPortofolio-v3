@@ -13,10 +13,11 @@ export default function NavSkillButton({
     w-12 h-12
 
     lg:w-18 lg:h-18
-    
+
+    2xl:w-24 2xl:h-24
     ${
       active
-        ? "border-none bg-gradient-to-b pb-0.75 from-[hsl(48,50%,72%)] via-[hsl(72,11%,82%)] to-[hsl(163,47%,85%)]"
+        ? "border-none bg-gradient-to-b pb-0.75 lg:pb-1.5 2xl:pb-2.5 from-[hsl(48,50%,72%)] via-[hsl(72,11%,82%)] to-[hsl(163,47%,85%)]"
         : " border-dotted border-2 border-[hsl(171,29%,50%)]"
     }`}
       onClick={onClick}
@@ -30,15 +31,19 @@ export default function NavSkillButton({
 
         lg:w-5 lg:h-5 lg:-top-2.5
 
-        ${active ? "bg-[hsl(48,50%,72%)]" : "bg-[hsl(175,38%,63%)]"}
+        2xl:w-6 2xl:h-6 2xl:-top-3
+
+        ${active ? "bg-[hsl(48,50%,72%)]" : "bg-[hsl(175,38%,63%)] "}
         `}
       ></div>
       <div
         className={`
         relative flex items-center justify-center rounded-full overflow-hidden
         w-10 h-10
+
         lg:w-15 lg:h-15
-         
+
+        2xl:w-21 2xl:h-21
         ${
           active
             ? "bg-[hsl(47,88%,97%)] border-2 border-[hsl(175,37%,38%)] w-11 h-11 lg:w-16 lg:h-16 lg:border-4"
@@ -60,6 +65,8 @@ export default function NavSkillButton({
             text-base 
 
             lg:text-2xl
+
+            2xl:text-3xl
             ${active ? "text-[hsl(170,9%,27%)]" : "text-[hsl(133,69%,97%)]"}
             ${className}`}
         >

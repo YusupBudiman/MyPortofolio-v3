@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 9,
-    title: "Portfolio - Base Version",
+    title: "Portofolio - Base Version",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: ["/images/skills/nextjs.svg", "/images/skills/tailwind-logo.png"],
     images: [

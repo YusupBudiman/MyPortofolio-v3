@@ -7,39 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MobileButtonBackgroun from "./sections/MobileButtonBackgroun";
-
-const experiences = [
-  {
-    company: "Pengadilan Militer II - 09 Bandung",
-    role: "Full-Stack Developer",
-    type: "Internship",
-    period: "Sep 2022 - Dec 2022",
-  },
-  {
-    company: "Pengadilan Militer II - 09 Bandung",
-    role: "Full-Stack Developer",
-    type: "Internship",
-    period: "Sep 2022 - Dec 2022",
-  },
-  {
-    company: "Pengadilan Militer II - 09 Bandung",
-    role: "Full-Stack Developer",
-    type: "Internship",
-    period: "Sep 2022 - Dec 2022",
-  },
-  {
-    company: "Pengadilan Militer II - 09 Bandung",
-    role: "Full-Stack Developer",
-    type: "Internship",
-    period: "Sep 2022 - Dec 2022",
-  },
-  {
-    company: "Pengadilan Militer II - 09 Bandung",
-    role: "Full-Stack Developer",
-    type: "Internship",
-    period: "Sep 2022 - Dec 2022",
-  },
-];
+import { experiences } from "@/data/experiences";
 
 // Helper: split experiences into chunks of 2 per slide
 const chunk = (arr, size) => {

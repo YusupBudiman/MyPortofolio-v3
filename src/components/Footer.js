@@ -40,7 +40,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full h-full flex items-center justify-center md:justify-between  z-99">
+    <footer className="w-full h-full flex items-center justify-center lg:justify-between lg:px-4 z-99">
       <div className="hidden lg:flex items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
           <h2 className=" text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
@@ -52,13 +52,6 @@ export default function Footer() {
               {formatDate(time)} | {formatTime(time)}
             </p>
           )}
-        </div>
-
-        <div className="flex flex-col items-center justify-center gap-2">
-          <h2 className="text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
-            Open Source
-          </h2>
-          <p className="text-sm font-medium text-[#d6d6d6]">View on GitHub</p>
         </div>
       </div>
 
