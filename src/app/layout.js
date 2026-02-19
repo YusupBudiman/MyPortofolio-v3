@@ -1,5 +1,4 @@
-import "@/styles/global.css";
-import "@/styles/swiper-pagination.css";
+import "@/styles";
 import FullpageProvider from "@/components/FullpageProvider";
 import Header from "@/components/Header";
 

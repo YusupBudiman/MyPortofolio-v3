@@ -1,0 +1,38 @@
+.logo-wrapper {
+  opacity: 0;
+  animation-name: logo-intro;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.logo-inner {
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.logo {
+  pointer-events: none;
+  user-select: none;
+  padding: 1rem;
+}
+
+@keyframes logo-intro {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg) scale(0.7);
+    -webkit-transform: translateY(100vh) rotate(0deg) scale(0.7);
+    -moz-transform: translateY(100vh) rotate(0deg) scale(0.7);
+    -ms-transform: translateY(100vh) rotate(0deg) scale(0.7);
+    -o-transform: translateY(100vh) rotate(0deg) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg) scale(1);
+  }
+}

@@ -20,10 +20,7 @@
   transform: scale(1.15);
 }
 
-/* ============================= */
-/* Responsive */
-/* ============================= */
-
+/* Responsive ===================================== */
 /* lg ≥1024px */
 @media (min-width: 1024px) {
   .custom-pagination .swiper-pagination-bullet {
