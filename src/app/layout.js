@@ -3,7 +3,7 @@ import FullpageProvider from "@/components/FullpageProvider";
 import Header from "@/components/Header";
 
 export const metadata = {
-  title: "My Portfolio",
+  title: "YusupDev",
   description: "Personal portfolio built with Next.js",
 };
 

@@ -59,28 +59,53 @@ export default function Footer() {
       />
 
       <div className="relative z-10 w-full h-full flex items-center justify-center lg:justify-between lg:px-8">
-        <div className="hidden lg:flex items-center justify-center gap-8">
-          <div className="flex flex-col items-center justify-center gap-2">
-            <h2 className=" text-xs uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold">
-              Local Time
-            </h2>
+        <div className="hidden lg:flex flex-col items-center justify-center gap-2">
+          <h2
+            className={`
+             uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold 
 
-            {mounted && time && (
-              <p className="text-sm font-medium text-[hsl(43,43%,84%)]">
-                {formatDate(time)} | {formatTime(time)}
-              </p>
-            )}
-          </div>
+             text-[10px] 
+             2xl:text-xs
+             `}
+          >
+            Local Time
+          </h2>
+
+          {mounted && time && (
+            <p
+              className={`
+            font-medium text-[hsl(43,43%,84%)] 
+            
+            text-xs 
+            2xl:text-sm
+            `}
+            >
+              {formatDate(time)} | {formatTime(time)}
+            </p>
+          )}
         </div>
 
         <div className="flex flex-col items-center w-full lg:w-auto">
-          <h2 className="text-xs uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold">
+          <h2
+            className={`
+            uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold 
+            
+            text-xs
+            lg:text-[10px] 
+            2xl:text-xs
+            `}
+          >
             Socials
           </h2>
 
           <ul
-            className="flex flex-col items-center justify-center gap-4 mt-4 text-sm font-medium text-[hsl(43,43%,84%)]
-        lg:flex-row lg:mt-2"
+            className={`
+              flex flex-col items-center justify-center gap-4 mt-4 font-medium text-[hsl(43,43%,84%)]
+
+              text-sm
+              lg:text-[10px] lg:flex-row lg:mt-2
+              2xl:text-sm
+        `}
           >
             {socials.map((item) => (
               <li key={item.name} className=" hover:text-[hsl(40,41%,31%)]">

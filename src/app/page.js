@@ -37,7 +37,9 @@ export default function Home() {
 
           w-screen h-[30vh]
            
-          lg:h-[10vh]
+          lg:h-[80px]
+
+          2xl:h-[100px]
           `}
       >
         <Footer />

@@ -38,10 +38,10 @@ export default function Navbar() {
             `}
         >
           <span
-            className="font-bold tracking-wide"
+            className="text-sm font-semibold tracking-wide "
             onClick={() => scrollToIndex(0)}
           >
-            MyPortofolio
+            YusupDev.
           </span>
 
           <button
