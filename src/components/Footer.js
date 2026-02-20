@@ -40,38 +40,57 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full h-full flex items-center justify-center lg:justify-between lg:px-4 z-99">
-      <div className="hidden lg:flex items-center justify-center gap-8">
-        <div className="flex flex-col items-center justify-center gap-2">
-          <h2 className=" text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
-            Local Time
+    <footer className="relative bg-[hsl(101,12%,49%)] w-full h-full">
+      <div
+        className={`
+              absolute z-2 bg-gradient-to-r from-[hsl(69,25%,55%)] via-[hsl(44,63%,58%)] to-[hsl(34,85%,62%)]
+              top-0 left-0
+              w-full h-1
+
+              lg:h-1.5
+              
+              `}
+      />
+      <div
+        className={`absolute z-1
+          w-full h-full bg-[hsl(101,12%,47%)] mask-[url('/images/pattern1.png')] mask-center mask-repeat [mask-size:60%]
+          lg:[mask-size:20%]
+          `}
+      />
+
+      <div className="relative z-10 w-full h-full flex items-center justify-center lg:justify-between lg:px-8">
+        <div className="hidden lg:flex items-center justify-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <h2 className=" text-xs uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold">
+              Local Time
+            </h2>
+
+            {mounted && time && (
+              <p className="text-sm font-medium text-[hsl(43,43%,84%)]">
+                {formatDate(time)} | {formatTime(time)}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center w-full lg:w-auto">
+          <h2 className="text-xs uppercase tracking-widest text-[hsl(43,43%,84%)] font-bold">
+            Socials
           </h2>
 
-          {mounted && time && (
-            <p className="text-sm font-medium text-[#d6d6d6]">
-              {formatDate(time)} | {formatTime(time)}
-            </p>
-          )}
+          <ul
+            className="flex flex-col items-center justify-center gap-4 mt-4 text-sm font-medium text-[hsl(43,43%,84%)]
+        lg:flex-row lg:mt-2"
+          >
+            {socials.map((item) => (
+              <li key={item.name} className=" hover:text-[hsl(40,41%,31%)]">
+                <Link href={item.url} target="_blank">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-
-      <div className="flex flex-col items-center w-full lg:w-auto">
-        <h2 className="text-xs uppercase tracking-widest text-[#d6d6d6] font-semibold">
-          Socials
-        </h2>
-
-        <ul
-          className="flex flex-col items-center justify-center gap-4 mt-2 text-sm font-medium text-[#d6d6d6]
-        lg:flex-row"
-        >
-          {socials.map((item) => (
-            <li key={item.name}>
-              <Link href={item.url} target="_blank">
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </footer>
   );
