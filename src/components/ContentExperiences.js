@@ -78,6 +78,9 @@ export default function ContentExperience() {
         z-20 h-auto bg-gradient-to-bl from-[hsl(11,44%,46%)] to-[hsl(14,45%,49%)] select-none rounded-lg
         
         w-[100vw] px-4 pt-2 pb-5
+
+        md:w-[80vw]
+
         lg:w-[30rem] lg:px-5 lg:pt-2 lg:pb-5
 
         xl:w-[40rem]  xl:px-6 xl:pt-2 xl:pb-6
@@ -290,12 +293,14 @@ export default function ContentExperience() {
             )}
           </div>
         </div>
+
         {/* Nav  */}
         <div
           className={`
        z-50 w-full items-center justify-center  gap-4 flex
 
-       px-6 py-4
+       px-6 py-2 mb-8 
+       lg:py-4 lg:mb-0
        `}
         >
           <button

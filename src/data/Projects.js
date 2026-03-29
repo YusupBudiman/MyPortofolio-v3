@@ -32,7 +32,7 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Portofolio - Base Version",
+    title: "Portofolio - Version 2",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: ["/images/skills/nextjs.svg", "/images/skills/tailwind-logo.png"],
     images: [
@@ -130,6 +130,26 @@ export const projects = [
 
   {
     id: 2,
+    title: "Portofolio - Version 1",
+    description: "Personal portfolio built with Vite and Tailwind CSS",
+    tools: [
+      "/images/skills/react-logo.png",
+      "/images/skills/tailwind-logo.png",
+      "/images/skills/javascript.png",
+    ],
+    images: [
+      "/images/projects/portofolio-v1-1.webp",
+      "/images/projects/portofolio-v1-2.webp",
+      "/images/projects/portofolio-v1-3.webp",
+      "/images/projects/portofolio-v1-4.webp",
+      "/images/projects/portofolio-v1-5.webp",
+    ],
+    github: "https://github.com/YusupBudiman/personal-portofolio-v1.git",
+    demo: "https://personal-portofolio-v1.vercel.app/",
+  },
+
+  {
+    id: 1,
     title: "Parallax Effect - Dark Mode",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -143,19 +163,5 @@ export const projects = [
     ],
     github: "https://github.com/YusupBudiman/animated-parallax-darkmode.git",
     demo: "https://animated-parallax-darkmode.vercel.app/",
-  },
-
-  {
-    id: 1,
-    title: "Starfall Animation",
-    description: "Personal portfolio built with Next.js and Tailwind CSS",
-    tools: [
-      "/images/skills/react-logo.png",
-      "/images/skills/css.png",
-      "/images/skills/javascript.png",
-    ],
-    images: ["/images/projects/starfall.webp"],
-    github: "https://github.com/YusupBudiman/starfall-animation.git",
-    demo: "https://starfall-animation.vercel.app/",
   },
 ];

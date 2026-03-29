@@ -35,7 +35,9 @@ export default function ProjectCard({
 
         w-[clamp(10rem,70vw,20rem)] h-[clamp(8rem,20vh,15rem)]
 
-        lg:w-[20rem] lg:h-[10rem]
+        md:w-[20rem] md:h-[10rem]
+
+        lg:w-[25rem] lg:h-[12rem]
 
         xl:w-[30rem] xl:h-[14rem] 
 

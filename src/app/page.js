@@ -33,7 +33,7 @@ export default function Home() {
         id="footer"
         data-fullpage
         className={`
-          flex items-center justify-center
+          flex items-center justify-center 
 
           w-screen h-[30vh]
            

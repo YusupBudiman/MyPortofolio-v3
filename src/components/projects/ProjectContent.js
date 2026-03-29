@@ -71,6 +71,8 @@ export default function ProjectContent({ projects }) {
           relative flex flex-col items-center justify-center bg-gradient-to-b from-[hsl(34,81%,72%)] via-[hsl(20,58%,46%)] to-[hsl(42,61%,59%)]
 
           w-[90vw] h-[16rem] p-[6px] rounded-tr-[30px]
+
+          md:w-[80vw]
           
           lg:w-[30rem] lg:h-[18rem] lg:p-[8px] lg:rounded-tr-[40px]
 
@@ -85,7 +87,7 @@ export default function ProjectContent({ projects }) {
             
             w-[120px] h-[80px] top-[-10%] right-[-6%]
 
-            lg:w-[180px] lg:h-[100px] 
+            md:w-[180px] md:h-[100px] 
 
             xl:w-[240px] xl:h-[100px] xl:top-[-5%] 
 

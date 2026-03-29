@@ -51,7 +51,9 @@ export default function ProjectSlider({
                 flex justify-center
 
                 !w-[80vw]
-
+                
+                md:!w-[50vw]
+                
                 lg:!w-[25rem] 
 
                 xl:!w-[35rem] 
