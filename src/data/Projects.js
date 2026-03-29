@@ -1,20 +1,19 @@
 export const projects = [
   {
-    id: 9,
-    title: "Portofolio - Base Version",
-    description: "Personal portfolio built with Next.js and Tailwind CSS",
+    id: 10,
+    title: "Topup Games",
+    description: "website topup game built with Next.js and Tailwind CSS",
     tools: ["/images/skills/nextjs.svg", "/images/skills/tailwind-logo.png"],
     images: [
-      "/images/projects/portofolio-base1.webp",
-      "/images/projects/portofolio-base2.webp",
-      "/images/projects/portofolio-base3.webp",
-      "/images/projects/portofolio-base4.webp",
+      "/images/projects/topupgame1.webp",
+      "/images/projects/topupgame2.webp",
+      "/images/projects/topupgame3.webp",
     ],
-    github: "https://github.com/YusupBudiman/my-portofolio-v2.git",
-    demo: "https://my-portofolio-v2-orpin.vercel.app/",
+    github: "https://github.com/YusupBudiman/topup-games.git",
+    demo: "https://topup-games-iota.vercel.app/",
   },
   {
-    id: 8,
+    id: 9,
     title: "Movie App",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
     tools: [
@@ -30,6 +29,20 @@ export const projects = [
     ],
     github: "https://github.com/YusupBudiman/chill-movie-react.git",
     demo: "https://chill-movie-react-meir.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Portofolio - Base Version",
+    description: "Personal portfolio built with Next.js and Tailwind CSS",
+    tools: ["/images/skills/nextjs.svg", "/images/skills/tailwind-logo.png"],
+    images: [
+      "/images/projects/portofolio-base1.webp",
+      "/images/projects/portofolio-base2.webp",
+      "/images/projects/portofolio-base3.webp",
+      "/images/projects/portofolio-base4.webp",
+    ],
+    github: "https://github.com/YusupBudiman/my-portofolio-v2.git",
+    demo: "https://my-portofolio-v2-orpin.vercel.app/",
   },
 
   {
